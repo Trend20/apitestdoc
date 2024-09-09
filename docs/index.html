@@ -3,128 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Tester CLI Documentation</title>
+    <title>API Tester & Docs Generator</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #1f1f1f;
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #333;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.2em;
-        }
-
-        main {
-            padding: 20px;
-            max-width: 900px;
-            margin: 30px auto;
-            background: #1a1a1a;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        h2 {
-            color: #ffffff;
-            margin-top: 30px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
-
-        h3 {
-            margin-top: 25px;
-            color: #ffffff;
-        }
-
-        p, ul {
-            line-height: 1.6;
-        }
-
-        code {
-            background-color: #2d2d2d;
-            color: #ffffff;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-
-        pre {
-            background-color: #2d2d2d;
-            padding: 15px;
-            border-radius: 6px;
-            font-size: 0.95em;
-            overflow-x: auto;
-            color: #ffffff;
-        }
-
-        ul {
-            list-style: disc;
-            margin-left: 20px;
-        }
-
-        footer {
-            background-color: #1f1f1f;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            border-top: 1px solid #333;
-            color: #888;
-        }
-
-        .faq-item {
-            margin-bottom: 20px;
-            cursor: pointer;
-        }
-
-        .faq-answer {
-            display: none;
-            margin-top: 10px;
-        }
-
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-
-        .faq-item h3 {
-            margin: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #e0e0e0;
-        }
-
-        .faq-item h3:after {
-            content: '+';
-            font-size: 1.5em;
-            color: #888;
-            transition: transform 0.3s;
-        }
-
-        .faq-item.active h3:after {
-            transform: rotate(45deg);
-            color: #bbb;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <header>
-    <h1>API Tester CLI Documentation</h1>
+    <h1>API Tester & Docs Generator</h1>
 </header>
 <main>
     <section id="overview">
         <h2>Overview</h2>
-        <p>The API Tester CLI tool allows you to test API endpoints and generate API documentation. It supports various configurations and output formats.</p>
+        <p>The API Tester CLI is a powerful tool designed to simplify the process of testing API endpoints and generating comprehensive API documentation. With support for various HTTP methods, custom headers, and flexible output formats, it's an essential tool for developers working with APIs.</p>
+    </section>
+
+    <section id="installation">
+        <h2>Installation</h2>
+        <p>To install the API Tester CLI, run the following command:</p>
+        <pre><code>npm install -g api-tester-cli</code></pre>
     </section>
 
     <section id="commands">
@@ -133,15 +29,15 @@
         <div class="faq-item">
             <h3>1. <code>test</code></h3>
             <div class="faq-answer">
-                <p>Tests a specified API endpoint.</p>
+                <p>The <code>test</code> command allows you to send requests to API endpoints and view the responses.</p>
                 <h4>Usage:</h4>
                 <pre><code>apitester test --url &lt;URL&gt; --method &lt;METHOD&gt; [--body &lt;BODY&gt;] [--headers &lt;HEADER&gt;]</code></pre>
                 <h4>Options:</h4>
                 <ul>
-                    <li><code>--url</code>: API URL (required)</li>
-                    <li><code>--method</code>: HTTP method (default: GET)</li>
-                    <li><code>--body</code>: Request body (optional)</li>
-                    <li><code>--headers</code>: Request headers (optional, comma-separated)</li>
+                    <li><code>--url</code>: The URL of the API endpoint (required)</li>
+                    <li><code>--method</code>: HTTP method (GET, POST, PUT, DELETE, etc.) (default: GET)</li>
+                    <li><code>--body</code>: Request body in JSON format (optional)</li>
+                    <li><code>--headers</code>: Custom headers in key:value format, separated by commas (optional)</li>
                 </ul>
             </div>
         </div>
@@ -149,12 +45,13 @@
         <div class="faq-item">
             <h3>2. <code>generate-doc</code></h3>
             <div class="faq-answer">
-                <p>Generates API documentation in JSON format.</p>
+                <p>The <code>generate-doc</code> command creates API documentation based on your test results.</p>
                 <h4>Usage:</h4>
                 <pre><code>apitester generate-doc --output &lt;OUTPUT_FILE&gt;</code></pre>
                 <h4>Options:</h4>
                 <ul>
-                    <li><code>--output</code>: Output file path (default: ./apidoc.json)</li>
+                    <li><code>--output</code>: Path to the output file (default: ./apidoc.json)</li>
+                    <li><code>--format</code>: Output format (json or markdown) (default: json)</li>
                 </ul>
             </div>
         </div>
@@ -163,37 +60,88 @@
     <section id="examples">
         <h2>Examples</h2>
         <h3>Testing an API Endpoint</h3>
-        <pre><code>./apitester test --url "https://fakestoreapi.com/products" --method "GET"</code></pre>
+        <pre><code>apitester test --url "https://api.example.com/users" --method "GET" --headers "Authorization:Bearer token123"</code></pre>
 
-        <h3>Generating Documentation</h></h3>
-        <pre><code>./apitester generate-doc --output "apidoc.json"</code></pre>
+        <h3>Generating Documentation</h3>
+        <pre><code>apitester generate-doc --output "api_documentation.md" --format markdown</code></pre>
     </section>
 
     <section id="configuration">
         <h2>Configuration</h2>
-        <p>Configuration settings can also be specified in a YAML file:</p>
-        <pre><code>url: "https://fakestoreapi.com/products"
-method: "GET"
-body: ""
-headers:
-  - "Content-Type: application/json"</code></pre>
+        <p>You can create a configuration file named <code>apitester.config.yml</code> in your project root to store default settings:</p>
+        <pre><code>default_url: "https://api.example.com"
+default_headers:
+  - "Content-Type: application/json"
+  - "Authorization: Bearer YOUR_TOKEN"
+output_format: markdown
+output_file: "./docs/api_documentation.md"</code></pre>
+    </section>
+    <section id="playground">
+        <h2>Playground</h2>
+        <p>Test the API Tester CLI right in your browser!</p>
+        <form id="playground-form">
+            <label for="url">URL:</label>
+            <input type="url" id="url" name="url" required placeholder="https://api.example.com/endpoint">
+
+            <label for="method">Method:</label>
+            <select id="method" name="method">
+                <option value="GET">GET</option>
+                <option value="POST">POST</option>
+                <option value="PUT">PUT</option>
+                <option value="DELETE">DELETE</option>
+            </select>
+
+            <label for="headers">Headers (key:value, one per line):</label>
+            <textarea id="headers" name="headers" rows="3" placeholder="Content-Type:application/json"></textarea>
+
+            <label for="body">Request Body (JSON):</label>
+            <textarea id="body" name="body" rows="5" placeholder='{"key": "value"}'></textarea>
+
+            <button type="submit">Send Request</button>
+        </form>
+        <div id="playground-output-container">
+            <div class="line-numbers"></div>
+            <pre id="playground-output"></pre>
+            <button id="copy-button">Copy</button>
+        </div>
+    </section>
+
+    <section id="tips">
+        <h2>Tips and Best Practices</h2>
+        <ul>
+            <li>Always use HTTPS URLs for secure API testing.</li>
+            <li>When testing POST or PUT requests, ensure your JSON body is properly formatted.</li>
+            <li>Use environment variables for sensitive information like API keys.</li>
+            <li>Regularly update your API documentation to keep it in sync with your API changes.</li>
+        </ul>
+    </section>
+
+    <section id="troubleshooting">
+        <h2>Troubleshooting</h2>
+        <div class="faq-item">
+            <h3>Q: Why am I getting a "Connection refused" error?</h3>
+            <div class="faq-answer">
+                <p>This error usually occurs when the API server is not reachable. Check your internet connection and verify that the API server is running and accessible.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <h3>Q: How can I include authentication in my API requests?</h3>
+            <div class="faq-answer">
+                <p>You can include authentication headers using the <code>--headers</code> option. For example: <code>--headers "Authorization:Bearer YOUR_TOKEN"</code></p>
+            </div>
+        </div>
     </section>
 
     <section id="help">
         <h2>Getting Help</h2>
-        <p>Run <code>apitester --help</code> to see a list of all commands and options.</p>
+        <p>For a complete list of commands and options, run:</p>
+        <pre><code>apitester --help</code></pre>
+        <p>If you encounter any issues or have questions, please visit our GitHub repository or contact our support team.</p>
     </section>
 </main>
 <footer>
     <p>&copy; 2024 API Tester CLI | All rights reserved.</p>
 </footer>
-
-<script>
-    document.querySelectorAll('.faq-item').forEach(item => {
-        item.addEventListener('click', () => {
-            item.classList.toggle('active');
-        });
-    });
-</script>
+<script src="./script.js"></script>
 </body>
 </html>
