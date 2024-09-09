@@ -47,5 +47,7 @@ var generateDocCmd = &cobra.Command{
 
 func init() {
 	generateDocCmd.Flags().String("output", "./apidoc.json", "Output file path")
+	generateDocCmd.Flags().String("format", "openapi", "File format")
 	viper.BindPFlag("output", generateDocCmd.Flags().Lookup("output"))
+	viper.BindPFlag("format", generateDocCmd.Flags().Lookup("format"))
 }

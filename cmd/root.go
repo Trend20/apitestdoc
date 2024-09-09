@@ -44,8 +44,9 @@ func initConfig() {
 		viper.SetConfigFile(cfgFile)
 	} else {
 		// Search config in default locations
-		viper.AddConfigPath("./configs")
+		viper.AddConfigPath("./config")
 		viper.SetConfigName("config")
+		viper.SetConfigType("yaml")
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match
