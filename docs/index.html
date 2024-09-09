@@ -14,7 +14,9 @@
 <main>
     <section id="overview">
         <h2>Overview</h2>
-        <p>The API Tester CLI is a powerful tool designed to simplify the process of testing API endpoints and generating comprehensive API documentation. With support for various HTTP methods, custom headers, and flexible output formats, it's an essential tool for developers working with APIs.</p>
+        <p>The API Tester CLI is a powerful tool designed to simplify the process of testing API endpoints and
+            generating comprehensive API documentation. With support for various HTTP methods, custom headers, and
+            flexible output formats, it's an essential tool for developers working with APIs.</p>
     </section>
 
     <section id="installation">
@@ -29,7 +31,8 @@
         <div class="faq-item">
             <h3>1. <code>test</code></h3>
             <div class="faq-answer">
-                <p>The <code>test</code> command allows you to send requests to API endpoints and view the responses.</p>
+                <p>The <code>test</code> command allows you to send requests to API endpoints and view the responses.
+                </p>
                 <h4>Usage:</h4>
                 <pre><code>apitestdoc test --url &lt;URL&gt; --method &lt;METHOD&gt; [--body &lt;BODY&gt;] [--headers &lt;HEADER&gt;]</code></pre>
                 <h4>Options:</h4>
@@ -68,7 +71,8 @@
 
     <section id="configuration">
         <h2>Configuration</h2>
-        <p>You can create a configuration file named <code>apitestdoc.config.yml</code> in your project root to store default settings:</p>
+        <p>You can create a configuration file named <code>apitestdoc.config.yml</code> in your project root to store
+            default settings:</p>
         <pre><code>default_url: "https://api.example.com"
 default_headers:
   - "Content-Type: application/json"
@@ -78,7 +82,7 @@ output_file: "./docs/api_documentation.md"</code></pre>
     </section>
     <section id="playground">
         <h2>Playground</h2>
-        <p>Test the API Tester CLI right in your browser!</p>
+        <p>Test the CLI right in your browser!</p>
         <form id="playground-form">
             <label for="url">URL:</label>
             <input type="url" id="url" name="url" required placeholder="https://api.example.com/endpoint">
@@ -121,13 +125,15 @@ output_file: "./docs/api_documentation.md"</code></pre>
         <div class="faq-item">
             <h3>Q: Why am I getting a "Connection refused" error?</h3>
             <div class="faq-answer">
-                <p>This error usually occurs when the API server is not reachable. Check your internet connection and verify that the API server is running and accessible.</p>
+                <p>This error usually occurs when the API server is not reachable. Check your internet connection and
+                    verify that the API server is running and accessible.</p>
             </div>
         </div>
         <div class="faq-item">
             <h3>Q: How can I include authentication in my API requests?</h3>
             <div class="faq-answer">
-                <p>You can include authentication headers using the <code>--headers</code> option. For example: <code>--headers "Authorization:Bearer YOUR_TOKEN"</code></p>
+                <p>You can include authentication headers using the <code>--headers</code> option. For example: <code>--headers
+                    "Authorization:Bearer YOUR_TOKEN"</code></p>
             </div>
         </div>
     </section>
@@ -136,7 +142,8 @@ output_file: "./docs/api_documentation.md"</code></pre>
         <h2>Getting Help</h2>
         <p>For a complete list of commands and options, run:</p>
         <pre><code>apitestdoc --help</code></pre>
-        <p>If you encounter any issues or have questions, please visit our GitHub repository or contact our support team.</p>
+        <p>If you encounter any issues or have questions, please visit our GitHub repository or contact our support
+            team.</p>
     </section>
 </main>
 <footer>
