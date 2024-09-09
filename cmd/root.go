@@ -12,7 +12,7 @@ var cfgFile string
 
 // rootCmd represents the base command
 var rootCmd = &cobra.Command{
-	Use:   "apitester",
+	Use:   "apitestdoc",
 	Short: "A CLI tool that tests APIs and generates API documentation.",
 	Long: `A CLI tool that tests APIs and generates API documentation based on the test results.
 Support's' different formats like OpenAPI/Swagger and includes automated testing features.`,

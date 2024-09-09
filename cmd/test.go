@@ -23,7 +23,6 @@ var testCmd = &cobra.Command{
 	Long:  `Test a specific API endpoint with specified HTTP method, headers, and body.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		client := &http.Client{}
-
 		url := viper.GetString("url")
 		method := viper.GetString("method")
 		body := viper.GetString("body")

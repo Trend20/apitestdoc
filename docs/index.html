@@ -83,7 +83,6 @@ output_file: "./docs/api_documentation.json"</code></pre>
         <form id="playground-form">
             <label for="url">URL:</label>
             <input type="url" id="url" name="url" required placeholder="https://api.example.com/endpoint">
-
             <label for="method">Method:</label>
             <select id="method" name="method">
                 <option value="GET">GET</option>
@@ -91,13 +90,11 @@ output_file: "./docs/api_documentation.json"</code></pre>
                 <option value="PUT">PUT</option>
                 <option value="DELETE">DELETE</option>
             </select>
-
             <label for="headers">Headers (key:value, one per line):</label>
             <textarea id="headers" name="headers" rows="3" placeholder="Content-Type:application/json"></textarea>
 
             <label for="body">Request Body (JSON):</label>
             <textarea id="body" name="body" rows="5" placeholder='{"key": "value"}'></textarea>
-
             <button type="submit">Send Request</button>
         </form>
         <div id="playground-output-container">
