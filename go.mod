@@ -1,4 +1,4 @@
-module github.com/Trend20/apitester
+module github.com/Trend20/apitestdoc
 
 go 1.22.6
 

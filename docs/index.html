@@ -20,7 +20,7 @@
     <section id="installation">
         <h2>Installation</h2>
         <p>To install the API Tester CLI, run the following command:</p>
-        <pre><code>npm install -g api-tester-cli</code></pre>
+        <pre><code>npm install -g api-testdoc-cli</code></pre>
     </section>
 
     <section id="commands">
@@ -31,7 +31,7 @@
             <div class="faq-answer">
                 <p>The <code>test</code> command allows you to send requests to API endpoints and view the responses.</p>
                 <h4>Usage:</h4>
-                <pre><code>apitester test --url &lt;URL&gt; --method &lt;METHOD&gt; [--body &lt;BODY&gt;] [--headers &lt;HEADER&gt;]</code></pre>
+                <pre><code>apitestdoc test --url &lt;URL&gt; --method &lt;METHOD&gt; [--body &lt;BODY&gt;] [--headers &lt;HEADER&gt;]</code></pre>
                 <h4>Options:</h4>
                 <ul>
                     <li><code>--url</code>: The URL of the API endpoint (required)</li>
@@ -47,7 +47,7 @@
             <div class="faq-answer">
                 <p>The <code>generate-doc</code> command creates API documentation based on your test results.</p>
                 <h4>Usage:</h4>
-                <pre><code>apitester generate-doc --output &lt;OUTPUT_FILE&gt;</code></pre>
+                <pre><code>apitestdoc generate-doc --output &lt;OUTPUT_FILE&gt;</code></pre>
                 <h4>Options:</h4>
                 <ul>
                     <li><code>--output</code>: Path to the output file (default: ./apidoc.json)</li>
@@ -60,15 +60,15 @@
     <section id="examples">
         <h2>Examples</h2>
         <h3>Testing an API Endpoint</h3>
-        <pre><code>apitester test --url "https://api.example.com/users" --method "GET" --headers "Authorization:Bearer token123"</code></pre>
+        <pre><code>apitestdoc test --url "https://api.example.com/users" --method "GET" --headers "Authorization:Bearer token123"</code></pre>
 
         <h3>Generating Documentation</h3>
-        <pre><code>apitester generate-doc --output "api_documentation.md" --format markdown</code></pre>
+        <pre><code>apitestdoc generate-doc --output "api_documentation.md" --format markdown</code></pre>
     </section>
 
     <section id="configuration">
         <h2>Configuration</h2>
-        <p>You can create a configuration file named <code>apitester.config.yml</code> in your project root to store default settings:</p>
+        <p>You can create a configuration file named <code>apitestdoc.config.yml</code> in your project root to store default settings:</p>
         <pre><code>default_url: "https://api.example.com"
 default_headers:
   - "Content-Type: application/json"
@@ -135,7 +135,7 @@ output_file: "./docs/api_documentation.md"</code></pre>
     <section id="help">
         <h2>Getting Help</h2>
         <p>For a complete list of commands and options, run:</p>
-        <pre><code>apitester --help</code></pre>
+        <pre><code>apitestdoc --help</code></pre>
         <p>If you encounter any issues or have questions, please visit our GitHub repository or contact our support team.</p>
     </section>
 </main>
