@@ -1,0 +1,6 @@
+url: "https://fakestoreapi.com/products"
+method: "GET"
+headers:
+  - "Content-Type: application/json"
+body: ""
+output: "./apidoc.json"

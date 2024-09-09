@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "github.com/Trend20/apitester/cmd"
 
 func main() {
-	fmt.Println("Apitester!")
+	cmd.Execute()
 }
