@@ -1,10 +1,244 @@
+/*:root {*/
+/*    --primary-color: #4a90e2;*/
+/*    --secondary-color: #5ca0e6;*/
+/*    --background-color: #e6f2ff;*/
+/*    --text-color: #333333;*/
+/*    --code-background: #d4e6f9;*/
+/*}*/
+/*body {*/
+/*    font-family: 'Inter', sans-serif;*/
+/*    background-color: var(--background-color);*/
+/*    color: var(--text-color);*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+/*header {*/
+/*    background-color: var(--primary-color);*/
+/*    color: #ffffff;*/
+/*    padding: 20px;*/
+/*    text-align: center;*/
+/*    border-bottom: 1px solid var(--secondary-color);*/
+/*}*/
+
+/*h1 {*/
+/*    margin: 0;*/
+/*    font-size: 2.2em;*/
+/*}*/
+
+/*main {*/
+/*    padding: 20px;*/
+/*    max-width: 900px;*/
+/*    margin: 30px auto;*/
+/*    background: #ffffff;*/
+/*    border-radius: 10px;*/
+/*    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*h2 {*/
+/*    color: var(--primary-color);*/
+/*    margin-top: 30px;*/
+/*    border-bottom: 2px solid var(--secondary-color);*/
+/*    padding-bottom: 10px;*/
+/*}*/
+
+/*h3 {*/
+/*    margin-top: 25px;*/
+/*    color: var(--secondary-color);*/
+/*}*/
+
+/*p, ul {*/
+/*    line-height: 1.6;*/
+/*}*/
+
+/*code {*/
+/*    background-color: var(--code-background);*/
+/*    color: var(--text-color);*/
+/*    padding: 2px 4px;*/
+/*    border-radius: 4px;*/
+/*}*/
+
+/*pre {*/
+/*    background-color: var(--code-background);*/
+/*    padding: 15px;*/
+/*    border-radius: 6px;*/
+/*    font-size: 0.95em;*/
+/*    overflow-x: auto;*/
+/*}*/
+
+/*ul {*/
+/*    list-style: disc;*/
+/*    margin-left: 20px;*/
+/*}*/
+
+/*footer {*/
+/*    background-color: var(--primary-color);*/
+/*    text-align: center;*/
+/*    padding: 20px;*/
+/*    margin-top: 40px;*/
+/*    border-top: 1px solid var(--secondary-color);*/
+/*    color: #ffffff;*/
+/*}*/
+
+/*.faq-item {*/
+/*    margin-bottom: 20px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.faq-answer {*/
+/*    display: none;*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*.faq-item.active .faq-answer {*/
+/*    display: block;*/
+/*}*/
+
+/*.faq-item h3 {*/
+/*    margin: 0;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    color: var(--text-color);*/
+/*}*/
+
+/*.faq-item h3:after {*/
+/*    content: '+';*/
+/*    font-size: 1.5em;*/
+/*    color: var(--secondary-color);*/
+/*    transition: transform 0.3s;*/
+/*}*/
+
+/*.faq-item.active h3:after {*/
+/*    transform: rotate(45deg);*/
+/*    color: var(--primary-color);*/
+/*}*/
+/*#playground {*/
+/*    background-color: #f0f8ff;*/
+/*    border: 1px solid var(--secondary-color);*/
+/*    border-radius: 8px;*/
+/*    padding: 20px;*/
+/*    margin-top: 30px;*/
+/*}*/
+
+/*#playground h2 {*/
+/*    color: var(--primary-color);*/
+/*    border-bottom: none;*/
+/*}*/
+
+/*#playground form {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 10px;*/
+/*}*/
+
+/*#playground input, #playground select, #playground textarea {*/
+/*    width: 100%;*/
+/*    padding: 8px;*/
+/*    border: 1px solid var(--secondary-color);*/
+/*    border-radius: 4px;*/
+/*    font-family: 'Fira Code', monospace;*/
+/*}*/
+
+/*#playground button {*/
+/*    background-color: var(--primary-color);*/
+/*    color: white;*/
+/*    border: none;*/
+/*    padding: 10px;*/
+/*    border-radius: 4px;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.3s;*/
+/*}*/
+
+/*#playground button:hover {*/
+/*    background-color: var(--secondary-color);*/
+/*}*/
+
+/*#playground-output-container {*/
+/*    position: relative;*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*#playground-output {*/
+/*    background-color: #2d2d2d;*/
+/*    color: #f8f8f2;*/
+/*    padding: 15px 15px 15px 45px;*/
+/*    border-radius: 6px;*/
+/*    white-space: pre-wrap;*/
+/*    font-family: 'Fira Code', monospace;*/
+/*    min-height: 100px;*/
+/*    max-height: 400px;*/
+/*    overflow-y: auto;*/
+/*    position: relative;*/
+/*}*/
+
+/*#copy-button {*/
+/*    position: absolute;*/
+/*    top: 5px;*/
+/*    right: 5px;*/
+/*    background-color: var(--primary-color);*/
+/*    color: white;*/
+/*    border: none;*/
+/*    padding: 5px 10px;*/
+/*    border-radius: 4px;*/
+/*    cursor: pointer;*/
+/*    font-size: 0.8em;*/
+/*    transition: background-color 0.3s;*/
+/*}*/
+
+/*#copy-button:hover {*/
+/*    background-color: var(--secondary-color);*/
+/*}*/
+
+/*.line-numbers {*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    top: 0;*/
+/*    bottom: 0;*/
+/*    width: 30px;*/
+/*    padding: 15px 5px;*/
+/*    text-align: right;*/
+/*    background-color: #1d1d1d;*/
+/*    color: #888;*/
+/*    font-family: 'Fira Code', monospace;*/
+/*    user-select: none;*/
+/*}*/
+
+/*#generate-docs-container {*/
+/*    margin-top: 20px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    gap: 10px;*/
+/*}*/
+
+/*#generate-docs-button {*/
+/*    background-color: var(--primary-color);*/
+/*    color: white;*/
+/*    border: none;*/
+/*    padding: 10px 15px;*/
+/*    border-radius: 4px;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.3s;*/
+/*}*/
+
+/*#generate-docs-button:hover {*/
+/*    background-color: var(--secondary-color);*/
+/*}*/
+
+/*#doc-format {*/
+/*    padding: 5px;*/
+/*    border: 1px solid var(--secondary-color);*/
+/*    border-radius: 4px;*/
+/*}*/
+
 :root {
     --primary-color: #4a90e2;
     --secondary-color: #5ca0e6;
     --background-color: #e6f2ff;
     --text-color: #333333;
-    --code-background: #d4e6f9;
+    --code-background: #2d2d2d;
+    --code-text-color: #f8f8f2;
 }
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--background-color);
@@ -12,6 +246,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 header {
     background-color: var(--primary-color);
     color: #ffffff;
@@ -51,14 +286,17 @@ p, ul {
 }
 
 code {
+    font-family: 'Fira Code', monospace;
     background-color: var(--code-background);
-    color: var(--text-color);
+    color: var(--code-text-color);
     padding: 2px 4px;
     border-radius: 4px;
 }
 
 pre {
+    font-family: 'Fira Code', monospace;
     background-color: var(--code-background);
+    color: var(--code-text-color);
     padding: 15px;
     border-radius: 6px;
     font-size: 0.95em;
@@ -112,6 +350,7 @@ footer {
     transform: rotate(45deg);
     color: var(--primary-color);
 }
+
 #playground {
     background-color: #f0f8ff;
     border: 1px solid var(--secondary-color);
@@ -159,8 +398,8 @@ footer {
 }
 
 #playground-output {
-    background-color: #2d2d2d;
-    color: #f8f8f2;
+    background-color: var(--code-background);
+    color: var(--code-text-color);
     padding: 15px 15px 15px 45px;
     border-radius: 6px;
     white-space: pre-wrap;
@@ -201,4 +440,31 @@ footer {
     color: #888;
     font-family: 'Fira Code', monospace;
     user-select: none;
+}
+
+#generate-docs-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#generate-docs-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#generate-docs-button:hover {
+    background-color: var(--secondary-color);
+}
+
+#doc-format {
+    padding: 5px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
 }

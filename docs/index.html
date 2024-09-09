@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Tester & Docs Generator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -14,15 +14,13 @@
 <main>
     <section id="overview">
         <h2>Overview</h2>
-        <p>The API Tester CLI is a powerful tool designed to simplify the process of testing API endpoints and
-            generating comprehensive API documentation. With support for various HTTP methods, custom headers, and
-            flexible output formats, it's an essential tool for developers working with APIs.</p>
+        <p>The API Tester CLI is a powerful tool designed to simplify the process of testing API endpoints and generating comprehensive API documentation. With support for various HTTP methods, custom headers, and flexible output formats, it's an essential tool for developers working with APIs.</p>
     </section>
 
     <section id="installation">
         <h2>Installation</h2>
         <p>To install the API Tester CLI, run the following command:</p>
-        <pre><code>npm install -g api-testdoc-cli</code></pre>
+        <pre><code>npm install -g api-tester-cli</code></pre>
     </section>
 
     <section id="commands">
@@ -31,8 +29,7 @@
         <div class="faq-item">
             <h3>1. <code>test</code></h3>
             <div class="faq-answer">
-                <p>The <code>test</code> command allows you to send requests to API endpoints and view the responses.
-                </p>
+                <p>The <code>test</code> command allows you to send requests to API endpoints and view the responses.</p>
                 <h4>Usage:</h4>
                 <pre><code>apitestdoc test --url &lt;URL&gt; --method &lt;METHOD&gt; [--body &lt;BODY&gt;] [--headers &lt;HEADER&gt;]</code></pre>
                 <h4>Options:</h4>
@@ -54,7 +51,7 @@
                 <h4>Options:</h4>
                 <ul>
                     <li><code>--output</code>: Path to the output file (default: ./apidoc.json)</li>
-                    <li><code>--format</code>: Output format (json or markdown) (default: json)</li>
+                    <li><code>--format</code>: Output format (json, markdown, openapi, or postman) (default: json)</li>
                 </ul>
             </div>
         </div>
@@ -66,23 +63,23 @@
         <pre><code>apitestdoc test --url "https://api.example.com/users" --method "GET" --headers "Authorization:Bearer token123"</code></pre>
 
         <h3>Generating Documentation</h3>
-        <pre><code>apitestdoc generate-doc --output "api_documentation.md" --format markdown</code></pre>
+        <pre><code>apitestdoc generate-doc --output "api_documentation.json" --format openapi</code></pre>
     </section>
 
     <section id="configuration">
         <h2>Configuration</h2>
-        <p>You can create a configuration file named <code>apitestdoc.config.yml</code> in your project root to store
-            default settings:</p>
+        <p>You can create a configuration file named <code>apitestdoc.config.yml</code> in your project root to store default settings:</p>
         <pre><code>default_url: "https://api.example.com"
 default_headers:
   - "Content-Type: application/json"
   - "Authorization: Bearer YOUR_TOKEN"
-output_format: markdown
-output_file: "./docs/api_documentation.md"</code></pre>
+output_format: openapi
+output_file: "./docs/api_documentation.json"</code></pre>
     </section>
+
     <section id="playground">
         <h2>Playground</h2>
-        <p>Test the CLI right in your browser!</p>
+        <p>Test the API Tester CLI right in your browser!</p>
         <form id="playground-form">
             <label for="url">URL:</label>
             <input type="url" id="url" name="url" required placeholder="https://api.example.com/endpoint">
@@ -108,6 +105,15 @@ output_file: "./docs/api_documentation.md"</code></pre>
             <pre id="playground-output"></pre>
             <button id="copy-button">Copy</button>
         </div>
+        <div id="generate-docs-container">
+            <select id="doc-format">
+                <option value="json">JSON</option>
+                <option value="markdown">Markdown</option>
+                <option value="openapi">OpenAPI</option>
+                <option value="postman">Postman Collection</option>
+            </select>
+            <button id="generate-docs-button">Generate Docs</button>
+        </div>
     </section>
 
     <section id="tips">
@@ -125,15 +131,13 @@ output_file: "./docs/api_documentation.md"</code></pre>
         <div class="faq-item">
             <h3>Q: Why am I getting a "Connection refused" error?</h3>
             <div class="faq-answer">
-                <p>This error usually occurs when the API server is not reachable. Check your internet connection and
-                    verify that the API server is running and accessible.</p>
+                <p>This error usually occurs when the API server is not reachable. Check your internet connection and verify that the API server is running and accessible.</p>
             </div>
         </div>
         <div class="faq-item">
             <h3>Q: How can I include authentication in my API requests?</h3>
             <div class="faq-answer">
-                <p>You can include authentication headers using the <code>--headers</code> option. For example: <code>--headers
-                    "Authorization:Bearer YOUR_TOKEN"</code></p>
+                <p>You can include authentication headers using the <code>--headers</code> option. For example: <code>--headers "Authorization:Bearer YOUR_TOKEN"</code></p>
             </div>
         </div>
     </section>
@@ -142,12 +146,11 @@ output_file: "./docs/api_documentation.md"</code></pre>
         <h2>Getting Help</h2>
         <p>For a complete list of commands and options, run:</p>
         <pre><code>apitestdoc --help</code></pre>
-        <p>If you encounter any issues or have questions, please visit our GitHub repository or contact our support
-            team.</p>
+        <p>If you encounter any issues or have questions, please visit our GitHub repository or contact our support team.</p>
     </section>
 </main>
 <footer>
-    <p>&copy; 2024 API Tester CLI | All rights reserved.</p>
+    <p>&copy; 2024 TestDoc CLI | All rights reserved.</p>
 </footer>
 <script src="./script.js"></script>
 </body>
